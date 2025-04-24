@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #C7F9CC 0%, #80ED99 50%, #57CC99 100%);
+}
+
+.hover-scale {
+    transition: transform 0.2s;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: auto; /* Show scrollbar in IE/Edge */
+    scrollbar-width: auto; /* Show scrollbar in Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: block; /* Show scrollbar in Chrome/Safari */
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #57CC99;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #80ED99;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #57CC99 #f1f1f1;
+}
+
+/* Add smooth scrolling behavior */
+.overflow-x-auto {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.status-option label {
+    border-color: #e5e7eb;
+    background-color: white;
+}
+
+.status-option:hover label {
+    border-color: #57CC99;
+}
+
+/* Animation for status selection */
+.status-option label {
+    transition: all 0.2s ease-in-out;
+}
+
+.status-option input[type="radio"]:checked + label {
+    border-color: #57CC99;
+    background-color: #C7F9CC;
+    transform: scale(1.02);
+}
+
+/* Focus styles */
+.status-option input[type="radio"]:focus + label {
+    box-shadow: 0 0 0 2px rgba(87, 204, 153, 0.2);
+}
+
+.selected-toggle {
+    background-color: #57CC99;
+    color: white;
+}
+
+#doctorToggle, #patientToggle {
+    color: #4B5563;
+}
+
+#doctorToggle:hover, #patientToggle:hover {
+    background-color: #80ED99;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#selectionScreen:not(.hidden),
+#doctorForm:not(.hidden),
+#patientForm:not(.hidden) {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Add smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Button hover effects */
+.transform {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+/* Post interactions */
+.post-interaction {
+    transition: all 0.2s ease;
+}
+
+.post-interaction:hover {
+    transform: scale(1.1);
+}
+
+/* Category pills */
+.category-pill {
+    transition: all 0.2s ease;
+}
+
+.category-pill:hover {
+    transform: translateY(-1px);
+}
+
+/* Floating action button animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.fixed.bottom-6 {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Background Elements */
+.medical-plus {
+    font-size: 400px;
+    font-family: Arial;
+    content: '+';
+    opacity: 0.1;
+}
+
+.medical-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: fadeInRight 1s ease-out forwards;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Button Hover Effects */
+.group:hover svg {
+    transform: translateX(4px);
+}
+
+/* Counter Animation */
+.counter {
+    animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Testimonial card hover effect */
+.testimonial-card {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* FAQ hover effect */
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Post animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.space-y-6 > div {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Add animation delay for each post */
+.space-y-6 > div:nth-child(1) { animation-delay: 0.1s; }
+.space-y-6 > div:nth-child(2) { animation-delay: 0.2s; }
+.space-y-6 > div:nth-child(3) { animation-delay: 0.3s; }
+.space-y-6 > div:nth-child(4) { animation-delay: 0.4s; }
+
+/* Sidebar styles */
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+/* Hover effects for sidebar items */
+.sidebar-item {
+    transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+    transform: translateX(5px);
+}
+
+/* Make the posts container scrollable with padding for sidebar */
+.space-y-6 {
+    padding-right: 1rem;
+    margin-bottom: 4rem; /* Keep space for mobile navigation */
+}
+
+/* Card hover effects */
+.post-card {
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Image hover effect */
+.post-image {
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-image {
+    transform: scale(1.02);
+}
+
+/* Button hover animations */
+.action-button {
+    transition: all 0.2s ease;
+}
+
+.action-button:hover {
+    transform: scale(1.05);
+}
+
+/* Smooth loading animation */
+.post-card {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .space-y-6 {
+        margin-bottom: 4rem; /* Add space for mobile navigation */
+    }
+
+    /* Adjust modal for mobile */
+    #createPostModal .bg-white,
+    #commentsModal .bg-white {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+
+    /* Adjust post card padding for mobile */
+    .post-card {
+        padding: 1rem;
+    }
+
+    /* Make images responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Smooth transitions for mobile menu */
+.mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.hidden {
+    transform: translateX(-100%);
+}
+
+/* Adjust modal positioning */
+#createPostModal .bg-white,
+#commentsModal .bg-white {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+} 

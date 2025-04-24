@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTalk - Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#57CC99',
+                        secondary: '#80ED99',
+                        light: '#C7F9CC',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="home.html"><img class="h-8 w-auto" src="assets/Full_Logo.png" alt="MediTalk"></a>
+                    <div class="hidden md:flex items-center mr-10 space-x-8">
+                        <a href="home.html" class="text-gray-500 hover:text-primary">الرئيسية</a>
+                        <a href="community.html" class="text-primary font-medium">المجتمع</a>
+                        <a href="doctors.html" class="text-gray-500 hover:text-primary">الأطباء</a>
+                        <a href="about.html" class="text-gray-500 hover:text-primary">حول</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:block relative">
+                        <input type="text" 
+                               placeholder="Search..." 
+                               class="w-64 px-4 py-2 rounded-full bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <svg class="w-5 h-5 text-gray-400 absolute right-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <button class="text-gray-500 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                    </button>
+                    <button onclick="handleLogout()" class="text-gray-500 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                        </svg>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden text-gray-500 hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="home.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">الرئيسية</a>
+                    <a href="community.html" class="text-primary font-medium block px-3 py-2 rounded-md text-base">المجتمع</a>
+                    <a href="doctors.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">الأطباء</a>
+                    <a href="about.html" class="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium">حول</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto pt-20 px-4">
+        <!-- Hero Section -->
+        <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 mb-8 text-white">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">مرحباً بك في مجتمع ميديتوك</h1>
+            <p class="text-lg mb-6">انضم إلى مجتمعنا الطبي وشارك تجاربك وخبراتك مع الآخرين</p>
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-white text-primary px-6 py-3 rounded-xl font-medium hover:bg-light transition-colors duration-200">
+                    شارك تجربتك
+                </button>
+                <button class="border-2 border-white text-white px-6 py-3 rounded-xl font-medium hover:bg-white/10 transition-colors duration-200">
+                    تصفح المواضيع
+                </button>
+            </div>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Category 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <span class="text-sm text-gray-500">124 موضوع</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">الصحة العامة</h3>
+                <p class="text-gray-600 mb-4">نصائح وإرشادات للحفاظ على صحة جيدة</p>
+                <a href="#" class="text-primary font-medium hover:text-secondary">تصفح المواضيع →</a>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <span class="text-sm text-gray-500">98 موضوع</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">النصائح الطبية</h3>
+                <p class="text-gray-600 mb-4">إرشادات وتوجيهات من أطباء متخصصين</p>
+                <a href="#" class="text-primary font-medium hover:text-secondary">تصفح المواضيع →</a>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <span class="text-sm text-gray-500">156 موضوع</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">تجارب المرضى</h3>
+                <p class="text-gray-600 mb-4">قصص نجاح وتجارب شخصية مع العلاج</p>
+                <a href="#" class="text-primary font-medium hover:text-secondary">تصفح المواضيع →</a>
+            </div>
+        </div>
+
+        <!-- Featured Topics -->
+        <div class="bg-white rounded-xl p-8 shadow-sm mb-12">
+            <h2 class="text-2xl font-bold mb-6">المواضيع المميزة</h2>
+            <div class="space-y-6">
+                <!-- Topic 1 -->
+                <div class="border-b pb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">الصحة العامة</span>
+                            <span class="text-gray-500 text-sm">منذ 3 ساعات</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">15 رد</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">أهمية النوم الصحي للجسم</h3>
+                    <p class="text-gray-600">تعرف على فوائد النوم الصحي وتأثيره على صحة الجسم والعقل...</p>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="border-b pb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">النصائح الطبية</span>
+                            <span class="text-gray-500 text-sm">منذ 5 ساعات</span>
+                        </div>
+                        <span class="text-gray-500 text-sm">23 رد</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">نصائح للوقاية من نزلات البرد</h3>
+                    <p class="text-gray-600">إرشادات مهمة للحماية من نزلات البرد خلال فصل الشتاء...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white rounded-xl p-6 text-center">
+                <div class="text-3xl font-bold text-primary mb-2">1,234</div>
+                <div class="text-gray-600">عضو نشط</div>
+            </div>
+            <div class="bg-white rounded-xl p-6 text-center">
+                <div class="text-3xl font-bold text-primary mb-2">456</div>
+                <div class="text-gray-600">موضوع</div>
+            </div>
+            <div class="bg-white rounded-xl p-6 text-center">
+                <div class="text-3xl font-bold text-primary mb-2">789</div>
+                <div class="text-gray-600">مشاركة</div>
+            </div>
+            <div class="bg-white rounded-xl p-6 text-center">
+                <div class="text-3xl font-bold text-primary mb-2">50</div>
+                <div class="text-gray-600">طبيب متخصص</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="text-center text-gray-500">
+                <p>جميع الحقوق محفوظة © 2024 ميديتوك</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add this script at the end of the body -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html> 
